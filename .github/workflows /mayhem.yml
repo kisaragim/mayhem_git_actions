@@ -3,13 +3,14 @@ name: Mayhem
 on:
   push:
     branches: [ main ]
+  #workflow_dispatch:
 
 permissions: write-all
 
 jobs:
   test-mayhem:
     name: test for mayhem
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
