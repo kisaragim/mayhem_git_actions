@@ -1,4 +1,5 @@
 name: Mayhem
+
 on:
   push:
     branches: [ main ]
