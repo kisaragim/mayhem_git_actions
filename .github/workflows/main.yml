@@ -7,6 +7,11 @@ on:
 
 permissions: write-all
 
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+  BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+
 jobs:
   test-mayhem:
     name: test for mayhem
@@ -18,8 +23,9 @@ jobs:
  
       - name: Start mayhem test
         id: run-mayhem
-        uses: actions/checkout@v3
+        uses: ForAllSecure/mcode-action@v1
         with:
+          mayhem-url: ${{ secrets.MAYHEM_URL }}
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           owner: keito
           fail-on-defects: true
