@@ -18,7 +18,7 @@ jobs:
  
       - name: Start mayhem test
         id: run-mayhem
-        uses: ForAllSecure/mcode-action@v1
+        uses: actions/checkout@v3
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           owner: keito
