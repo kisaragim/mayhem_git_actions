@@ -4,10 +4,7 @@ on:
   push:
     branches: [ main ]
 
-env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
-  BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+permissions: write-all
 
 jobs:
   test-mayhem:
@@ -27,6 +24,8 @@ jobs:
           sarif-output: sarif
           junit-output: junit
           coverage-output: coverage
+        
+      - name: run test 
         run: mayhem run ./test-pkg
 
       - name: Upload SARIF file(s)
