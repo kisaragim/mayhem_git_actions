@@ -15,12 +15,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with: 
-          fetch-depth: 0
-
+ 
       - name: Start mayhem test
         id: run-mayhem
-        uses: ForAllSecure/mapi-action@v2
+        #uses: ForAllSecure/mcode-action@v1
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           owner: keito
