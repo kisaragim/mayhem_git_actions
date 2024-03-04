@@ -10,9 +10,13 @@ env:
   BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
 
 jobs:
-    steps:
+  test-mayhem
+    name: test for mayhem
     runs-on: self-hosted
-      - uses: actions/checkout@v3
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Start mayhem test
         id: run-mayhem
