@@ -16,16 +16,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
  
-      - name: Start mayhem test
-        id: run-mayhem
-        uses: actions/checkout@v3
-        with:
-          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-          owner: keito
-          fail-on-defects: true
-          sarif-output: sarif
-          junit-output: junit
-          coverage-output: coverage
+      # - name: Start mayhem test
+      #   id: run-mayhem
+      #  uses: actions/checkout@v3
+      #   with:
+      #     mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+      #     owner: keito
+      #     fail-on-defects: true
+      #     sarif-output: sarif
+      #     junit-output: junit
+      #     coverage-output: coverage
         
       - name: run test 
         run: mayhem run ./test-pkg
