@@ -30,7 +30,7 @@ jobs:
       - name: run test 
         run: |
               mayhem run --all ./test-pkg
-              mayhem sync ./testme-pkg
+              mayhem sync ./test-pkg
 
       # - name: Upload SARIF file(s)
       #   if: always()
