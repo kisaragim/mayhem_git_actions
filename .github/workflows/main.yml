@@ -28,7 +28,7 @@ jobs:
       #     coverage-output: coverage
         
       - name: run test 
-        run: mayhem run　--all ./test-pkg
+        run: mayhem run --all ./test-pkg
 
       # - name: Upload SARIF file(s)
       #   if: always()
