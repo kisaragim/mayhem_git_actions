@@ -21,6 +21,7 @@ jobs:
         with:
            mayhem-url: ${{ secrets.MAYHEM_URL }}
            mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+           args: --image ghcr.io/kisaragim/mayhem_git_actions:main --file test-pkg/Mayhemfile --duration 60
            owner: keito
            fail-on-defects: true
            sarif-output: sarif
