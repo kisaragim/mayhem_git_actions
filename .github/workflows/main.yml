@@ -29,7 +29,7 @@ jobs:
       - name: run test 
         run: |
               mayhem run --all ./test-pkg
-              mayhem wait --sarif SARIF calc-a/calc-a/15
+              mayhem wait --sarif sarif calc-a/calc-a/17
               mayhem sync ./test-pkg
 
 
