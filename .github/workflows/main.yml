@@ -19,7 +19,8 @@ jobs:
       - name: Start mayhem test
       #   id: run-mayhem
         uses: actions/checkout@v3
-      #   with:
+        with:
+          sarif-output: sarif
       #      mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
       #      owner: keito
       #     fail-on-defects: true
@@ -31,6 +32,7 @@ jobs:
         run: |
               mayhem run --all ./test-pkg
               mayhem sync ./test-pkg
+
 
       - name: Upload SARIF file(s)
         if: always()
