@@ -28,7 +28,7 @@ jobs:
         
       - name: run test 
         run: |
-              mayhem run --all ./test-pkg --sarif SARIF
+              mayhem run --all --sarif SARIF ./test-pkg
               # mayhem wait --sarif report.sarif
               mayhem sync ./test-pkg
 
