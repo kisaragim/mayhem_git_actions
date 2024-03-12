@@ -19,8 +19,6 @@ jobs:
       - name: Start mayhem test
       #   id: run-mayhem
         uses: actions/checkout@v3
-        with:
-          sarif-output: sarif
       #      mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
       #      owner: keito
       #     fail-on-defects: true
@@ -30,7 +28,7 @@ jobs:
         
       - name: run test 
         run: |
-              mayhem run --all ./test-pkg
+              mayhem run --all ./test-pkg --sarif report.sarif
               mayhem sync ./test-pkg
 
 
