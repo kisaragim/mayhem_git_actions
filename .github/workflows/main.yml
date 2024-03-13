@@ -27,7 +27,7 @@ jobs:
       #     coverage-output: coverage
       - name: set env
         run: |
-              export DATETIME=`date "+%Y%m%d"_"%H_%M_%S"`
+              DATETIME=`date "+%Y%m%d"_"%H%M%S"`
               echo DATETIME
       - name: run test 
         run: |
