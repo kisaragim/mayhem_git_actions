@@ -25,12 +25,14 @@ jobs:
       #     sarif-output: sarif
       #     junit-output: junit
       #     coverage-output: coverage
-        
-      - name: run test 
+      - name: set env
         run: |
               export DATETIME=`date "+%Y%m%d"_"%H_%M_%S"`
-              mayhem run --all -b ${DATETIME} ./test-pkg
-              mayhem wait --sarif sarif --verbose calc-a/calc-a/${DATETIME}
+              echo DATETIME
+      - name: run test 
+        run: |
+              mayhem run --all -b $DATETIME ./test-pkg
+              mayhem wait --sarif sarif --verbose calc-a/calc-a/$DATETIME
               mayhem sync ./test-pkg
 
       - name: Upload SARIF file(s)
