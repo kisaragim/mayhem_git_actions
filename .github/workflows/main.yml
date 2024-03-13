@@ -29,13 +29,13 @@ jobs:
         run: |
               DATETIME=`date "+%Y%m%d"`
               echo ${DATETIME}
-              value=28
+              value=29
               echo $value
       - name: run test 
         run: |
               mayhem run --all ./test-pkg
               # mayhem run --all --env KEY=DATETIME -b `date "+%Y%m%d"` ./test-pkg
-              mayhem wait --sarif sarif --verbose calc-a/calc-a/`$value`
+              mayhem wait --sarif sarif --verbose calc-a/calc-a/`echo $value`
               # mayhem wait --sarif sarif --verbose calc-a/calc-a/5
               mayhem sync ./test-pkg
 
