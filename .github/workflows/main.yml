@@ -27,11 +27,11 @@ jobs:
       #     coverage-output: coverage
       - name: set env
         run: |
-              DATETIME=`date "+%Y%m%d"_"%H%M%S"`
+              DATETIME=`date "+%Y%m%d"`
               echo ${DATETIME}
       - name: run test 
         run: |
-              mayhem run --all -b BUILD_ID ./test-pkg
+              mayhem run --all --build-id ${DATETIME} ./test-pkg
               mayhem wait --sarif sarif --verbose calc-a/calc-a/${DATETIME}
               mayhem sync ./test-pkg
 
