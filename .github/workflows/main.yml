@@ -31,8 +31,10 @@ jobs:
               echo ${DATETIME}
       - name: run test 
         run: |
-              mayhem run --all --env KEY=DATETIME -b `date "+%Y%m%d"` ./test-pkg
-              mayhem wait --sarif sarif --verbose calc-a/calc-a/`date "+%Y%m%d"`
+              # mayhem run --all --env KEY=DATETIME -b `date "+%Y%m%d"` ./test-pkg
+              # mayhem wait --sarif sarif --verbose calc-a/calc-a/`date "+%Y%m%d"`
+              mayhem run --all ./test-pkg
+              mayhem wait --sarif sarif --verbose calc-a/calc-a/5
               mayhem sync ./test-pkg
 
       - name: Upload SARIF file(s)
