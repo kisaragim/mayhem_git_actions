@@ -28,7 +28,7 @@ jobs:
       - name: set env
         run: |
               DATETIME=`date "+%Y%m%d"`
-              echo ${{ DATETIME }}
+              echo ${DATETIME}
       - name: run test 
         run: |
               mayhem run --all --env KEY=DATETIME -b ${{ DATETIME }} ./test-pkg
