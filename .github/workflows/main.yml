@@ -31,8 +31,7 @@ jobs:
               echo ${DATETIME}
       - name: run test 
         run: |
-              # mayhem run --all --build-id ${DATETIME} ./test-pkg
-              mayhem run -b ${DATETIME} ./test-pkg
+              mayhem run --all --env KEY=DATETIME --build-id ${DATETIME} ./test-pkg
               mayhem wait --sarif sarif --verbose calc-a/calc-a/${DATETIME}
               mayhem sync ./test-pkg
 
