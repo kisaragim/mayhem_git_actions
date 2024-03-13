@@ -32,7 +32,6 @@ jobs:
               mayhem wait --sarif sarif --verbose calc-a/calc-a/22
               mayhem sync ./test-pkg
 
-
       - name: Upload SARIF file(s)
         if: always()
         uses: github/codeql-action/upload-sarif@v2
